@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="ImportData\" />
+    <PackageReference Include="Microsoft.Extensions.PlatformAbstractions" Version="1.1.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.7.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\CodeProject.Mongo.WebApi\CodeProject.Mongo.Business.Service\CodeProject.Mongo.Business.Service.csproj" />
+    <ProjectReference Include="..\..\CodeProject.Mongo.WebApi\CodeProject.Mongo.Data.Models\CodeProject.Mongo.Data.Models.csproj" />
+    <ProjectReference Include="..\..\CodeProject.Mongo.WebApi\CodeProject.Mongo.Data.MongoDb\CodeProject.Mongo.Data.MongoDb.csproj" />
+    <ProjectReference Include="..\..\CodeProject.Mongo.WebApi\CodeProject.Mongo.Interfaces\CodeProject.Mongo.Interfaces.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ImportData\products.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

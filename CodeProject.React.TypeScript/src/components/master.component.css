@@ -1,0 +1,79 @@
+.App {
+  text-align: center;
+}
+
+body {
+  height: "100vh";
+  background-color: #BBDEFB;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: whitesmoke;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  font-size: calc(10px + 2vmin);
+  padding: 5px;
+}
+
+.username {
+  text-align: right;
+  font-size: 10pt;
+}
+
+.App-link {
+  color: white;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 480px and up) */
+@media (min-width: 480px) {
+  .menubar {
+    display: none;
+    visibility: hidden;
+    flex-direction: column;
+  }
+
+  .menubutton {
+    float: left;
+    visibility: visible;
+    display: block;
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1280px) {
+  .menubar {
+    display: block;
+    visibility: visible;
+    flex-direction: row;
+  }
+
+  .menubutton {
+    float: left;
+    visibility: hidden;
+    display: none;
+    flex-direction: row;
+  }
+}

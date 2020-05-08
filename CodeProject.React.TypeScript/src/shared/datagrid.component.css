@@ -1,0 +1,105 @@
+.mobileClass {
+    background-color: red;
+}
+
+.dataGridPager {
+    text-align: right;
+    float: right;
+    height: '100%';
+    background-color: 'red';
+}
+
+.dataGridNoDataFound {
+    background-color: #e55350;
+    color: white !important;
+    margin: 10px !important;
+    padding: 10px !important;
+}
+
+.dataGridMobileText {
+    font-weight: bold;
+}
+
+.dataGridBorderBreak {
+    /*width: 100%;
+  text-align: left !important;*/
+    border-bottom: 1px solid #000 !important;
+    /*box-sizing: border-box;
+  border-right: 1px;*/
+}
+
+/* Small devices (portrait tablets and large phones, 480px and up) */
+@media (min-width: 480px) {
+    .dataGridTableWrapper {
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    .dataGridTableHeader {
+        display: none !important;
+    }
+
+    .dataGridTableRow {
+        display: flex !important;
+        flex-flow: column wrap;
+        width: '100%';
+    }
+
+    .dataGridTableContainer {
+        table-layout: fixed !important;
+    }
+}
+
+@media (min-width: 1290px) {
+    .dataGridTableHeader {
+        display: block !important;
+    }
+
+    .dataGridTableWrapper {
+        overflow: auto;
+    }
+
+    .dataGridTableContainer {
+        table-layout: fixed !important;
+    }
+
+    .dataGridTableBody {
+        overflow: auto;
+        height: calc(100vh - 80vh + (100vw - 80vw) + 65px);
+    }
+
+    .dataGridTableRow {
+        flex-flow: row wrap;
+        width: 100%;
+        padding-right: 0px;
+        margin-right: 0px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops) */
+@media (min-width: 1900px) and (min-height: 1080px) {
+    .dataGridTableHeader {
+        display: block !important;
+    }
+
+    .dataGridTableWrapper {
+        overflow: auto;
+        overflow-x: hidden;
+    }
+
+    .dataGridTableContainer {
+        table-layout: fixed !important;
+    }
+
+    .dataGridTableBody {
+        overflow: auto;
+        height: calc(100vh - 80vh + (100vw - 80vw) + 30px);
+    }
+
+    .dataGridTableRow {
+        flex-flow: row wrap;
+        width: 100%;
+        padding-right: 0px;
+        margin-right: 0px;
+    }
+}

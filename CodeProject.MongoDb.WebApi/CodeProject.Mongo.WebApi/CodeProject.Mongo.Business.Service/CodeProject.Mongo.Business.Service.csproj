@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodeProject.Mongo.Data.Models\CodeProject.Mongo.Data.Models.csproj" />
+    <ProjectReference Include="..\CodeProject.Mongo.Interfaces\CodeProject.Mongo.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

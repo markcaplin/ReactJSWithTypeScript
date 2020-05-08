@@ -1,0 +1,21 @@
+.pager {
+    text-align: right;
+    float: right;
+}
+
+
+.productInquirySearchForm {
+    /*margin-bottom: 10px;*/
+    margin-top: 0px;
+    margin-left: 5px !important;
+    padding-left: 10px !important;
+    width: 98% !important;
+    margin-bottom: 20px;
+}
+
+.noDataFound {
+    background-color: #e55350;
+    color: white !important;
+    margin: 10px !important;
+    padding: 10px !important;
+}

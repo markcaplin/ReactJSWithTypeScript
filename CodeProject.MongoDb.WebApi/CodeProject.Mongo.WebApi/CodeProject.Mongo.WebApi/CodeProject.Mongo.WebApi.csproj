@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodeProject.Mongo.Business.Service\CodeProject.Mongo.Business.Service.csproj" />
+    <ProjectReference Include="..\CodeProject.Mongo.Data.Models\CodeProject.Mongo.Data.Models.csproj" />
+    <ProjectReference Include="..\CodeProject.Mongo.Data.MongoDb\CodeProject.Mongo.Data.MongoDb.csproj" />
+    <ProjectReference Include="..\CodeProject.Mongo.Interfaces\CodeProject.Mongo.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>
