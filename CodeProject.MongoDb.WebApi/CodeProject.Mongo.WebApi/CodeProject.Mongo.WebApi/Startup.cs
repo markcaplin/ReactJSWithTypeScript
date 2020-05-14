@@ -11,12 +11,11 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json;
 
 namespace CodeProject.Mongo.WebApi
 {
@@ -32,17 +31,17 @@ namespace CodeProject.Mongo.WebApi
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
-			CorsPolicyBuilder corsBuilder = new CorsPolicyBuilder();
-
-			corsBuilder.AllowAnyHeader();
-			corsBuilder.AllowAnyMethod();
-			corsBuilder.AllowAnyOrigin();
-			corsBuilder.AllowCredentials();
-
+		
 			services.AddCors(options =>
 			{
-				options.AddPolicy("SiteCorsPolicy", corsBuilder.Build());
+				options.AddPolicy("SiteCorsPolicy",
+					builder =>
+					{
+						builder.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod();
+					});				
 			});
+
+			services.AddControllers().AddNewtonsoftJson();
 
 			services.AddTransient<IOnlineStoreDataService, OnlineStoreDataService>();
 
@@ -64,11 +63,11 @@ namespace CodeProject.Mongo.WebApi
 			});
 
 			services.AddScoped<SecurityFilter>();
-			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+		
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-		public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
 			app.Use(async (ctx, next) =>
 			{
@@ -79,7 +78,6 @@ namespace CodeProject.Mongo.WebApi
 				}
 			});
 
-			app.UseCors("SiteCorsPolicy");
 			app.UseAuthentication();
 
 			if (env.IsDevelopment())
@@ -89,7 +87,17 @@ namespace CodeProject.Mongo.WebApi
 
 			app.UseHttpsRedirection();
 
-			app.UseMvc();
+			app.UseRouting();
+
+			app.UseCors("SiteCorsPolicy");
+
+			app.UseAuthorization();
+
+			app.UseEndpoints(endpoints =>
+			{
+				endpoints.MapControllers();
+			});
+
 		}
 	}
 }

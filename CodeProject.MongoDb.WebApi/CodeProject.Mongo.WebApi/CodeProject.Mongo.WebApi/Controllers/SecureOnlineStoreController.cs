@@ -222,8 +222,9 @@ namespace CodeProject.Mongo.WebApi.Controllers
 				UserDataTransformation userReturned = returnResponse.Entity;
 
 				string token = TokenManagement.CreateToken(userReturned.Id, userReturned.FirstName, userReturned.LastName, userReturned.EmailAddress);
+				returnResponse.Entity = new UserDataTransformation();
 				returnResponse.Entity.Token = token;
-
+			
 				return Ok(returnResponse);
 
 			}
