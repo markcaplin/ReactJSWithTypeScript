@@ -44,50 +44,6 @@ class AboutComponent extends React.Component {
                     years, feeds him well with some great home cooked meals. You can contact Mark at
                     mark.caplin@gmail.com
                   </p>
-
-                  <h2>Code Project Articles by Mark</h2>
-                </div>
-
-                <div style={{ marginBottom: "5px" }}>
-                  <a href="https://www.codeproject.com/Articles/1368325/Test-Driving-MongoDB-with-NET-Core-2">
-                    Test Driving MongoDB with .NET Core
-                  </a>
-                </div>
-
-                <div style={{ marginBottom: "5px" }}>
-                  <a href="https://www.codeproject.com/Articles/5161835/Vue-js-with-TypeScript-for-the-Angular-2plus-Devel">
-                    Vue.js with TypeScript for the Angular (2+) Developer
-                  </a>
-                </div>
-
-                <div style={{ marginBottom: "5px" }}>
-                  <a href="https://www.codeproject.com/Articles/1250961/Deploying-an-Angular-Application-with-ASP-NET-Core">
-                    Deploying an Angular 6 Application with ASP.NET Core 2
-                  </a>
-                </div>
-
-                <div style={{ marginBottom: "5px" }}>
-                  <a href="https://www.codeproject.com/Articles/1267590/Developing-Microservices-with-NET-Core-2-1-RabbitM">
-                    Developing Microservices with .NET Core 2.1, RabbitMQ, SignalR, EF Core 2.1 and Angular 6
-                  </a>
-                </div>
-
-                <div style={{ marginBottom: "5px" }}>
-                  <a href="https://www.codeproject.com/Articles/1193423/Integrating-the-Angular-CLI-With-Visual-Studio">
-                    Integrating the Angular 4 CLI With Visual Studio Professional & Visual Studio Code
-                  </a>
-                </div>
-
-                <div style={{ marginBottom: "5px" }}>
-                  <a href="https://www.codeproject.com/Articles/1115444/Developing-And-Deploying-An-Angular-Application-Wi">
-                    Developing And Deploying An Angular 2 Application With Visual Studio 2015
-                  </a>
-                </div>
-
-                <div style={{ marginBottom: "5px" }}>
-                  <a href="https://www.codeproject.com/Articles/1116876/Developing-An-Angular-Application-With-TypeScript">
-                    Developing An Angular 2 Application With TypeScript
-                  </a>
                 </div>
               </CardContent>
             </Paper>
